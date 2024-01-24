@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "electro-net"
+version = "0.1.0"
+description = ""
+authors = ["Dmitriy Zemlyankin <ygyshka0@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ipython = "^8.20.0"
+psycopg2-binary = "^2.9.9"
+django = "^5.0.1"
+djangorestframework = "^3.14.0"
+django-rest-framework = "^0.1.0"
+python-dotenv = "^1.0.1"
+django-filter = "^23.5"
+djangorestframework-simplejwt = "^5.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
