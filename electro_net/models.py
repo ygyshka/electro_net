@@ -7,6 +7,7 @@ import constants
 
 
 class Product(models.Model):
+
     title = models.CharField(max_length=255, verbose_name='Продукт')
     model = models.CharField(max_length=255, verbose_name='Модель')
     date_created = models.DateField(verbose_name='Дата Выхода продукта на рынок')
@@ -61,9 +62,7 @@ class Supplier(models.Model):
                 self.level = 0
             elif self.company_type == constants.RETAIL and self.parent_supplier.company_type == constants.ENTERPRENEUR:
                 if self.parent_supplier.level == 2:
-
                     self.parent_supplier.level = 1
-                # new_level = Supplier.objects.get(pk=self.parent_supplier.pk).level
                 self.level = 2
             elif self.company_type == constants.RETAIL and self.parent_supplier.company_type == constants.FACTORY:
                 self.level = 1
@@ -73,18 +72,3 @@ class Supplier(models.Model):
                 if self.parent_supplier.level != 1:
                     self.parent_supplier.level = 1
                 self.level = 2
-            #
-            # if self.company_type == constants.FACTORY:
-            #     self.level = 0
-            # elif self.company_type == constants.RETAIL and self.parent_supplier.company_type == constants.ENTERPRENEUR:
-            #     if self.parent_supplier.level == 0:
-            #         self.parent_supplier.level = 1
-            #     self.level = 2
-            # elif self.company_type == constants.RETAIL and self.parent_supplier.company_type == constants.FACTORY:
-            #     self.level = 1
-            # elif self.company_type == constants.ENTERPRENEUR and self.parent_supplier.company_type == constants.FACTORY:
-            #     self.level = 1
-            # elif self.company_type == constants.ENTERPRENEUR and self.parent_supplier.company_type == constants.RETAIL:
-            #     if self.parent_supplier.level == 0:
-            #         self.parent_supplier.level = 1
-            #     self.level = 2
