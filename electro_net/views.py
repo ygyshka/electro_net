@@ -1,6 +1,5 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
 
 from electro_net.models import Supplier
 from electro_net.serializer import SupplierSerializer
